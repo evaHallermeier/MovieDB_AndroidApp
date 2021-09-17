@@ -1,4 +1,4 @@
-package com.example.moviedb.Models;
+package com.example.moviedb.models;
 import android.os.Parcel;
 import android.os.Parcelable; //to move data from one activity to another
 
@@ -58,7 +58,12 @@ public class MovieModel implements Parcelable{
     public String get_overview() {
         return movie_overview;
     }
-
+    public String get_release_date() {
+        return release_date;
+    }
+    public String get_poster_path() {
+        return poster_path;
+    }
     //PARCELABLE
 
     @Override

@@ -1,11 +1,10 @@
-package com.example.moviedb.ViewModels;
+package com.example.moviedb.viewModels;
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.moviedb.Models.MovieModel;
-import com.example.moviedb.Repositories.MovieRepository;
+import com.example.moviedb.models.MovieModel;
+import com.example.moviedb.repositories.MovieRepository;
 
 import java.util.List;
 
@@ -28,6 +27,9 @@ public class MovieList_VM extends ViewModel {
         return movieRepository.getMovies();
     }
 
+    public void searchMovieAPI(String query, int pageNB) {
+        movieRepository.searchMovieAPI(query, pageNB);
+    }
 
 
 }

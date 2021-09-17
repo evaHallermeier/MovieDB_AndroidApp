@@ -1,10 +1,9 @@
-package com.example.moviedb.Repositories;
+package com.example.moviedb.repositories;
 
 
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 
-import com.example.moviedb.Models.MovieModel;
+import com.example.moviedb.models.MovieModel;
 import com.example.moviedb.request.MovieAPICLIENT;
 
 import java.util.List;
@@ -43,5 +42,9 @@ public class MovieRepository {
     }
 
      */
+
+    public void searchMovieAPI(String query, int pageNB) {
+        movieAPIclient.searchMoviesAPI(query, pageNB);
+    }
 
 }

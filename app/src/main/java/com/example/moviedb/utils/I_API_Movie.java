@@ -1,6 +1,7 @@
 package com.example.moviedb.utils;
 
-import com.example.moviedb.Models.MovieModel;
+import com.example.moviedb.models.MovieModel;
+import com.example.moviedb.response.MovieSearchResponse;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -10,6 +11,14 @@ import retrofit2.http.Query;
 public interface I_API_Movie {
     //search for movies //surement a enlever plus tard si pas utile
 
+
+    //search for movies
+    @GET("/3/search/movie")
+    Call<MovieSearchResponse> searchMovie(
+            @Query("api_key") String key,
+            @Query("query") String query,
+            @Query("page") int page
+    );
 
     //search movie by id
     //msybe for details
