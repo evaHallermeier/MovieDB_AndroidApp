@@ -7,7 +7,8 @@
     <color name="myBlue">#089EAC</color>
     <color name="colorAccent">#FF018786</color>
     <color name="black">#FF000000</color>
-
+    <color name="duskYellow">#FFC107</color>
+    <color name="lightGrey">#CDC5C5</color>
     <color name="grey">#ECE4E4</color>
 </resources>
 

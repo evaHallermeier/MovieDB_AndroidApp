@@ -30,7 +30,9 @@ public class MovieModel implements Parcelable{
     protected MovieModel(Parcel in) {
         title = in.readString();
         poster_path = in.readString();
-        release_date = in.readString();
+        release_date = in.readString().substring(0,4);
+        //get only the 4 first characters: to get only year of release
+
         movie_id = in.readInt();
         vote_average = in.readFloat();
         movie_overview = in.readString();

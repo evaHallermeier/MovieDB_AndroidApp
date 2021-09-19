@@ -34,7 +34,8 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
     @Override
     public void onBindViewHolder(@NonNull @org.jetbrains.annotations.NotNull RecyclerView.ViewHolder holder, int position) {
         ((MovieViewHolder)holder).title.setText(movies.get(position).getTitle());
-        ((MovieViewHolder)holder).extra_info.setText(movies.get(position).get_release_date());
+        ((MovieViewHolder)holder).extra_info.setText(movies.get(position).get_release_date().substring(0,4));
+        //to get only year of release
         //for the moment extra info is release date
 
         //image

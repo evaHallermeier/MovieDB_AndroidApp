@@ -62,7 +62,8 @@ public class MovieRepository {
 
     public void searchNextPage(){
      //   searchMovieAPI(query, pageNB+1);
-        searchPopular_MovieAPI(pageNB+1);
+        pageNB++;
+        searchPopular_MovieAPI(pageNB);
     }
 
 }

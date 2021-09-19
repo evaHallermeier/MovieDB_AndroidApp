@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView.OnScrollListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
@@ -37,6 +38,7 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
 //contain list of movies
 
     //fields
+    private Toolbar mToolbar;
     private MovieList_VM movieList_vm;
     private RecyclerView recycleView;
     private MovieRecyclerView movieRecyclerViewAdapter;
@@ -68,11 +70,20 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
-        //Toolbar toolbar = findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
+       mToolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(mToolbar);
         recycleView = findViewById(R.id.recycleView);
      //   btn = findViewById(R.id.button);
         movieList_vm = new ViewModelProvider(this).get(MovieList_VM.class);

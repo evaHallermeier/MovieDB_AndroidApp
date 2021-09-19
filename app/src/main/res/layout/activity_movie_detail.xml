@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,11 +7,13 @@
     tools:context=".MovieDetail">
 
 
+
     <LinearLayout
+
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/detail_background"
+
         android:gravity="left"
         android:orientation="vertical"
         android:paddingLeft="10dp"
@@ -28,25 +30,19 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+
 
                 <ImageView
                     android:id="@+id/detail_image"
-                    android:layout_width="273dp"
-                    android:layout_height="350dp"
-                    android:layout_marginTop="28dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="150dp"
 
                     app:srcCompat="@drawable/movieimage" />
 
-                <TextView
-                    android:id="@+id/date"
-                    android:layout_width="116dp"
-                    android:layout_height="wrap_content"
-                    android:textSize="20dp" />
 
-            </TableRow>
+
+
 
         </LinearLayout>
 
@@ -60,7 +56,7 @@
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif-light"
             android:text="TextView"
-            android:textColor="@color/grey"
+            android:textColor="@color/black"
             android:textSize="36sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -69,19 +65,32 @@
             app:layout_constraintTop_toBottomOf="@+id/detail_image"
             app:layout_constraintVertical_bias="0.074" />
 
-        <RatingBar
-            android:id="@+id/ratingBar"
+        <TextView
+            android:id="@+id/date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="229dp"
+            android:layout_height="45dp"
+
+            android:layout_marginRight="5dp"
+            android:isIndicator="true"
 
             android:numStars="5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detail_title"
-            app:layout_constraintVertical_bias="0.0" />
+            android:progressTint="@color/duskYellow"
+            android:scaleX="0.7"
+
+            android:scaleY="0.7"
+            android:scrollbarSize="5dp"/>
 
         <TextView
             android:id="@+id/detail_overview"
@@ -92,8 +101,8 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="sans-serif-light"
-            android:textColor="@color/grey"
-            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.26"
@@ -106,7 +115,4 @@
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

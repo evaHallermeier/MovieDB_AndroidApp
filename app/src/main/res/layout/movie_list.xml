@@ -13,7 +13,7 @@
         android:elevation="3dp"
         android:layout_gravity="center"
 
-        android:layout_margin="5dp"
+        android:layout_margin="3dp"
         movie_list:cardCornerRadius="0dp"
 
 
@@ -29,7 +29,7 @@
                 android:layout_centerHorizontal="true"
                 android:id="@+id/movie_image"
                 android:layout_width="wrap_content"
-                android:layout_height="145dp"
+                android:layout_height="137dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_launcher_background"
