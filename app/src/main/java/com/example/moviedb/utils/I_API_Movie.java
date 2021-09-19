@@ -20,6 +20,17 @@ public interface I_API_Movie {
             @Query("page") int page
     );
 
+    //get popular movies
+    //https://api.themoviedb.org/3/movie/popular?api_key=08e696dd9eee56bfad34f61503057b69&page=1
+    @GET("/3/movie/popular")
+    Call<MovieSearchResponse> getPopular(
+            @Query("api_key") String api_key,
+            @Query("page") int page
+    );
+
+
+
+
     //search movie by id
     //msybe for details
     //https://api.themoviedb.org/3/movie/550?api_key=08e696dd9eee56bfad34f61503057b69

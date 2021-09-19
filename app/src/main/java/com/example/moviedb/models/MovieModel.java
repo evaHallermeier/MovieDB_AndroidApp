@@ -2,7 +2,8 @@ package com.example.moviedb.models;
 import android.os.Parcel;
 import android.os.Parcelable; //to move data from one activity to another
 
-
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 
 public class MovieModel implements Parcelable{
@@ -13,6 +14,8 @@ public class MovieModel implements Parcelable{
     private String release_date;
     private int movie_id;
     private float vote_average;
+    @SerializedName("overview")
+    @Expose
     private String movie_overview;
 
     //CTOR

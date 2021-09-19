@@ -1,12 +1,15 @@
 package com.example.moviedb;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.OnScrollListener;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +39,7 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
     private MovieList_VM movieList_vm;
     private RecyclerView recycleView;
     private MovieRecyclerView movieRecyclerViewAdapter;
+   // boolean isPop = true;
   //  Button btn;
 
 
@@ -44,6 +48,22 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
         movieRecyclerViewAdapter = new MovieRecyclerView(this);
         recycleView.setAdapter(movieRecyclerViewAdapter);
         recycleView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        //load next pages of popular movies
+        recycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                if(!recyclerView.canScrollVertically(1)) {
+                    movieList_vm.searchNextPage();
+                    Log.v("Tag", "nextpage: ");
+
+                    //display next movies
+                }
+            }
+
+
+        });
     }
 
     @Override
@@ -57,7 +77,9 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
         movieList_vm = new ViewModelProvider(this).get(MovieList_VM.class);
         ConfigureRecycleView();
         ObserverAnyChange();
-        searchMovieAPI("america", 1);
+        ObservePopularMovies();
+       movieList_vm.searchPop_MovieAPI(1); //get all popular movies
+      // searchMovieAPI("america", 1);
         //TEST
         /*
         btn.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +105,20 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
          */
     }
 
+    private void ObservePopularMovies(){
+        movieList_vm.getPOp_Movies().observe(this, new Observer<List<MovieModel>>() {
+            @Override
+            public void onChanged(List<MovieModel> movieModel) { //observe any data change
+                if(movieModel !=null) {
+                    for(MovieModel model: movieModel) {
+                        Log.v("Tag", "ONCHANGED: "+ model.getTitle());
+                        movieRecyclerViewAdapter.setMovies(movieModel);
+                    }
+                }
+            }
+        });
+    }
+
     private void searchMovieAPI(String query, int pageNB){
         movieList_vm.searchMovieAPI(query, pageNB);
     }
@@ -92,8 +128,6 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
 //observe data change from VM
     private void ObserverAnyChange(){
         movieList_vm.getMovies().observe(this, new Observer<List<MovieModel>>() {
-
-
             @Override
             public void onChanged(List<MovieModel> movieModel) { //observe any data change
                 if(movieModel !=null) {
@@ -167,7 +201,9 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
 
     @Override
     public void onMovieClick(int position) {
-
+        Intent intent = new Intent(this, MovieDetail.class);
+        intent.putExtra("movie", movieRecyclerViewAdapter.getSelectedMovie(position));
+        startActivity(intent);
     }
 
     @Override
