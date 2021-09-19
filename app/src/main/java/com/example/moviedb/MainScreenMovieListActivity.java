@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener;
@@ -47,8 +48,8 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
 
         movieRecyclerViewAdapter = new MovieRecyclerView(this);
         recycleView.setAdapter(movieRecyclerViewAdapter);
-        recycleView.setLayoutManager(new LinearLayoutManager(this));
-
+       // recycleView.setLayoutManager(new LinearLayoutManager(this));
+        recycleView.setLayoutManager(new GridLayoutManager(this, 2));
 
         //load next pages of popular movies
         recycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -70,8 +71,8 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
         recycleView = findViewById(R.id.recycleView);
      //   btn = findViewById(R.id.button);
         movieList_vm = new ViewModelProvider(this).get(MovieList_VM.class);

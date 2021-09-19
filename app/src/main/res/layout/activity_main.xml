@@ -7,29 +7,20 @@
     tools:context=".MainScreenMovieListActivity">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        app:titleTextColor="@color/grey"
-        android:background="#4D2A8F"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_scrollFlags="scroll|enterAlways"
-        android:theme="@style/ThemeOverlay.AppCompat.Light"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        >
-    </androidx.appcompat.widget.Toolbar>
+
 
 
     <androidx.recyclerview.widget.RecyclerView
         app:layout_behavior="com.google.android.msterial.appbar.AppBarLayout$ScrollingViewBehavior"
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
