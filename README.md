@@ -33,7 +33,7 @@ You also need to use a smartphone/tablet (make sure that AVD Manager is installe
 *View Model*: send commands /notifications to the model to get values or notify and update movie list
 
 ## Functionalities
-*Main Screen*
+*Main Screen* -
 When the app is opened, the user will see a list of movie: they can scroll vertically to get more movies
 Each movie is represented in a cell with an image, the title of the movie and its year of release.
 
@@ -41,5 +41,5 @@ Each movie is represented in a cell with an image, the title of the movie and it
 <img src="https://github.com/evaHallermeier/androidApp-remote-Joystick/blob/master/image/ip-port.PNG" width="160" height="105"/>
 
 
-*Movie Detail*
+*Movie Detail* -
 After click on a movie cell: the user will see a new window that contains the details of the movie that they clicked on: a bigger image, the title, ratings by viewers, the year of release and an summery of the movie.
