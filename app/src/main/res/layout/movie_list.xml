@@ -8,8 +8,10 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardview"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appBar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,11 +20,14 @@
         android:clipToPadding="false"
         android:scrollbars="vertical"
         app:cardBackgroundColor="@color/grey"
-        movie_list:cardCornerRadius="0dp">
+        movie_list:cardCornerRadius="0dp"
+        app:cardCornerRadius="8dp"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+
             >
 
             <ImageView
@@ -41,7 +46,7 @@
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/extra_info"
@@ -51,7 +56,7 @@
                 android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:textColor="#000000"
-                android:textSize="20sp" />
+                android:textSize="10sp" />
 
         </RelativeLayout>
 

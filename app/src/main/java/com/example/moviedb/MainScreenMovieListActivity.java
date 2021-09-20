@@ -76,7 +76,7 @@ public class MainScreenMovieListActivity extends AppCompatActivity implements On
         recycleView = findViewById(R.id.recycleView);
         movieRecyclerViewAdapter = new MovieRecyclerView(this);
         recycleView.setAdapter(movieRecyclerViewAdapter);
-        recycleView.setLayoutManager(new GridLayoutManager(this, 2));
+        recycleView.setLayoutManager(new GridLayoutManager(this, 3));
 
         //load next pages of popular movies
         recycleView.addOnScrollListener(new RecyclerView.OnScrollListener() {
