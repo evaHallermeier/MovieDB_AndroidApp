@@ -6,7 +6,9 @@ This App uses the Movie Database API that provides access to a complete DataBase
 The user needs to open the app, they can scroll vertically and find a movie: click on it and get more details and they have the possibility to come back to the main screen with the list.
 
 
-<img src="https://github.com/evaHallermeier/androidApp-remote-Joystick/blob/master/image/screen.PNG" width="140" height="283"/>
+<img src="https://github.com/evaHallermeier/MovieDB_AndroidApp/blob/master/images/mainscreen.PNG" width="140" height="283"/>
+<img src="https://github.com/evaHallermeier/MovieDB_AndroidApp/blob/master/images/detail.PNG" width="140" height="283"/>
+
 
 ## Getting Started
 
@@ -36,9 +38,6 @@ You also need to use a smartphone/tablet (make sure that AVD Manager is installe
 *Main Screen* -
 When the app is opened, the user will see a list of movie: they can scroll vertically to get more movies
 Each movie is represented in a cell with an image, the title of the movie and its year of release.
-
-<img src="https://github.com/evaHallermeier/androidApp-remote-Joystick/blob/master/image/ipPort.PNG" width="160" height="105"/>
-<img src="https://github.com/evaHallermeier/androidApp-remote-Joystick/blob/master/image/ip-port.PNG" width="160" height="105"/>
 
 
 *Movie Detail* -
