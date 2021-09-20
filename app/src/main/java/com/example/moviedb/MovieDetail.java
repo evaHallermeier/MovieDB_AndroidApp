@@ -19,8 +19,7 @@ public class MovieDetail extends AppCompatActivity {
     private TextView title, overview, date;
     private String title_string;
     private RatingBar ratingBar;
-    private Toolbar dToolbar;
-    private TextView text_Top;
+
 
 
     @Override

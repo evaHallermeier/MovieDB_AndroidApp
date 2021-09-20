@@ -18,13 +18,6 @@ public class MovieModel implements Parcelable{
     @Expose
     private String movie_overview;
 
-    //CTOR
-    public MovieModel(String title, String poster_path, String release_date, int movie_id,
-            float vote_average,String movie_overview) {
-
-
-    }
-    //GETS
 
 
     protected MovieModel(Parcel in) {

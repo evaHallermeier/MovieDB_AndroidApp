@@ -36,7 +36,6 @@ public class MovieRecyclerView extends RecyclerView.Adapter<RecyclerView.ViewHol
         ((MovieViewHolder)holder).title.setText(movies.get(position).getTitle());
         ((MovieViewHolder)holder).extra_info.setText(movies.get(position).get_release_date().substring(0,4));
         //to get only year of release
-        //for the moment extra info is release date
 
         //image
         Glide.with(holder.itemView.getContext()).load("https://image.tmdb.org/t/p/w500"+movies.get(position).get_poster_path()).
