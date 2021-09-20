@@ -27,7 +27,9 @@ You also need to use a smartphone/tablet (make sure that AVD Manager is installe
 ### MVVM Architechture
 
 *Model*: hold the business logic, return data of a specific movie
+
 *View*: the user interface on the application on the smartphone or emulator
+
 *View Model*: send commands /notifications to the model to get values or notify and update movie list
 
 ## Functionalities
