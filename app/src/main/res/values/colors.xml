@@ -10,5 +10,6 @@
     <color name="duskYellow">#FFC107</color>
     <color name="lightGrey">#CDC5C5</color>
     <color name="grey">#ECE4E4</color>
+    <color name="greyDark">#575353</color>
 </resources>
 

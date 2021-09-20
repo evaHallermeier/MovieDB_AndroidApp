@@ -17,19 +17,25 @@ public class MovieDetail extends AppCompatActivity {
 
     private ImageView image;
     private TextView title, overview, date;
+    private String title_string;
     private RatingBar ratingBar;
-   // private Toolbar dToolbar;
+    private Toolbar dToolbar;
+    private TextView text_Top;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
-        //dToolbar = findViewById(R.id.dtoolbar);
-        //setSupportActionBar(dToolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbard);
 
-        //ActionBar actionBar = getSupportActionBar();
-       // actionBar.setDisplayHomeAsUpEnabled(true);
+        setSupportActionBar(toolbar);
+
+        TextView textView = (TextView)toolbar.findViewById(R.id.toolBar_title);
+
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         //display back button in order to come back to the main screen with the movie list
 
@@ -42,19 +48,21 @@ public class MovieDetail extends AppCompatActivity {
         date = findViewById(R.id.date);
 
         getDataMovie();
-        /*
-        if(actionBar !=null) {
-        actionBar.setTitle((CharSequence) title);
+
+        textView.setText(title_string);
+
+        actionBar.setDisplayShowTitleEnabled(false);
 
 
-        }*/
     }
 
     private void getDataMovie() {
         if(getIntent().hasExtra("movie")) {
             MovieModel movieMOdel = getIntent().getParcelableExtra("movie");
             Log.v("Tag", "incoming intent" + movieMOdel.getMovie_id());
-            title.setText(movieMOdel.getTitle());
+
+            title_string = movieMOdel.getTitle();
+            title.setText(title_string);
             overview.setText(movieMOdel.get_overview());
             ratingBar.setRating(movieMOdel.getVote_average()/2);
             String realeaseDate = "Release Date: " + movieMOdel.get_release_date();

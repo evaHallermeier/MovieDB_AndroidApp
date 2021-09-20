@@ -10,63 +10,55 @@
         android:id="@+id/cardview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="3dp"
-        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        app:cardBackgroundColor="@color/grey"
 
-        android:layout_margin="3dp"
-        movie_list:cardCornerRadius="0dp"
 
-
-        app:cardBackgroundColor="@color/grey">
+        movie_list:cardCornerRadius="0dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <ImageView
-                android:layout_centerHorizontal="true"
                 android:id="@+id/movie_image"
-                android:layout_width="wrap_content"
-                android:layout_height="137dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitXY"
-                android:src="@drawable/ic_launcher_background"
-                />
+                android:src="@drawable/ic_launcher_background" />
 
 
-                <TextView
-                    android:id="@+id/movie_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
-                    android:gravity="center"
-                    android:layout_below="@+id/movie_image"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingTop="5dp"/>
+            <TextView
+                android:id="@+id/movie_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movie_image"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
 
-                <TextView
-                    android:id="@+id/extra_info"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_below="@+id/movie_title"
-                    android:textColor="#000000"
-                    android:fontFamily="sans-serif"
-                    android:textSize="15sp"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="5dp"
-                    android:paddingBottom="5dp"/>
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
-                </RelativeLayout>
+            <TextView
+                android:id="@+id/extra_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/movie_title"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
 
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
-
-
+        </RelativeLayout>
 
 
     </androidx.cardview.widget.CardView>
