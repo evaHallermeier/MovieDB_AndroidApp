@@ -6,8 +6,8 @@ This App uses the Movie Database API that provides access to a complete DataBase
 The user needs to open the app, they can scroll vertically and find a movie: click on it and get more details and they have the possibility to come back to the main screen with the list.
 
 
-<img src="https://github.com/evaHallermeier/MovieDB_AndroidApp/blob/master/images/mainscreen.PNG" width="140" height="283"/>
-<img src="https://github.com/evaHallermeier/MovieDB_AndroidApp/blob/master/images/detail.PNG" width="140" height="283"/>
+<img src="https://github.com/evaHallermeier/MovieDB_AndroidApp/blob/master/images/mainscreen.PNG" width="200" height="310"/>
+<img src="https://github.com/evaHallermeier/MovieDB_AndroidApp/blob/master/images/detail.PNG" width="200" height="310"/>
 
 
 ## Getting Started
