@@ -1,18 +1,14 @@
-package com.example.moviedb.repositories;
-
+package com.example.moviedb.repository;
 
 import androidx.lifecycle.LiveData;
-
-import com.example.moviedb.models.MovieModel;
+import com.example.moviedb.model.MovieModel;
 import com.example.moviedb.request.MovieAPICLIENT;
-
 import java.util.List;
-
+//responsible to interact with movie api client and DB,part of the model in MVVM
 public class MovieRepository {
 
     private static MovieRepository instance;
     private MovieAPICLIENT movieAPIclient;
-    private String query;
     private int pageNB;
 
      public static MovieRepository getInstance() { //singleton
@@ -24,30 +20,21 @@ public class MovieRepository {
 
      //CTOR
      private MovieRepository(){
-        movieAPIclient = MovieAPICLIENT.getInstance();
+         movieAPIclient = MovieAPICLIENT.getInstance();
      }
 
-
-    //get
-
+    //GETTERS
     public LiveData<List<MovieModel>> getMovies() {
          return movieAPIclient.getMovies();
     }
-    public LiveData<List<MovieModel>> getPop_Movies() {
-        return movieAPIclient.getPopular_Movies();
-    }
-
-
 
     public void searchPopular_MovieAPI(int pageNB) {
         pageNB = pageNB;
         movieAPIclient.searchPopular_movies(pageNB);
     }
 
-
-    public void searchNextPage(){
+    public void searchNextPage(){ //call API to get next page with other movies
         pageNB++;
         searchPopular_MovieAPI(pageNB);
     }
-
 }

@@ -8,7 +8,6 @@ public class AppExecutors {
 //singleton
 
     private final ScheduledExecutorService networkIO = Executors.newScheduledThreadPool(3);
-    //3 threads : 1 for open retrofit,  1 for close retrofit
 
     private static AppExecutors instance;
 
@@ -22,5 +21,4 @@ public class AppExecutors {
     public ScheduledExecutorService networkIO() {
         return networkIO;
     }
-
 }

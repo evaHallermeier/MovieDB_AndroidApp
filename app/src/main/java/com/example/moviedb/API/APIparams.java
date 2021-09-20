@@ -1,4 +1,4 @@
-package com.example.moviedb.utils;
+package com.example.moviedb.API;
 
 public class APIparams { //parameters of the API created in TMDB
 
